@@ -1,4 +1,4 @@
-# JSCalculator# JSCalculator
+# JSCalculator
 A JavaScript, HTML and CSS based Calculator application.
 
 Made possible by 'Bro Code' on YouTube. [https://www.youtube.com/watch?v=I5kj-YsmWjM]
