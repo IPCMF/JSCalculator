@@ -4,14 +4,26 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode{
     background-color: hsl(0, 0%, 10%);
+}
+body.light-mode{
+    background-color: hsl(0, 0%, 90%);
 }
 #calculator{
     font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 15%);
-    border-radius: 15px;
+    border-radius: 50px;
     max-width: 500px;
     overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+#calculator.light-mode{
+    background-color: hsl(0, 0%, 88%);
+}
+#calculator.dark-mode{
+    background-color: hsl(0, 0%, 15%);
 }
 #display{
     width: 100%;
@@ -19,6 +31,13 @@ body{
     font-size: 5rem;
     text-align: left;
     border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+#display.light-mode{
+    background-color: hsl(0, 0%, 85%);
+    color: hsl(0, 0%, 20%);
+}
+#display.dark-mode{
     background-color: hsl(0, 0%, 20%);
     color: azure;
 }
@@ -28,33 +47,68 @@ body{
     gap: 10px;
     padding: 25px;
 }
-button{
+button {
     width: 100px;
     height: 100px;
     border-radius: 50px;
     border: none;
-    background-color: gray;
-    color: white;
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
-button:hover{   
+button.light-mode {
+    color: black;
+    background-color: lightgray;
+}
+button.dark-mode {
+    color: white;
+    background-color: gray;
+}
+button:hover.light-mode{   
+    background-color: hsl(0, 0%, 90%);
+}
+button:active.light-mode{
+    background-color: hsl(0, 0%, 100%);
+}
+button:hover.dark-mode{   
     background-color: hsl(0, 0%, 40%);
 }
-button:active{
+button:active.dark-mode{
     background-color: hsl(0, 0%, 15%);
 }
-.operator-btn{
+.operator-btn.light-mode{
     background-color: rgb(65, 182, 255);
+    color: black;
 }
-.operator-btn:hover{
+.operator-btn.dark-mode{
+    background-color: rgb(65, 182, 255);
+    color: white;
+}
+.operator-btn:hover.light-mode{
+    background-color: hsl(203, 100%, 80%);
+}
+.operator-btn:active.light-mode{
+    background-color: hsl(203, 100%, 100%);
+}
+.info-btn.light-mode{
+    position: relative;
+    left: -110px;
+    width: 210px;
+    height: 100px; /* Match the height of other buttons */
+    border-radius: 20px; /* Slightly rounded corners */
+    font-size: 4rem; /* Adjust font size to fit the button */
+    color: black; 
+    font-weight: bold;
+    cursor: pointer;
+}
+.operator-btn:hover.dark-mode{
     background-color: rgb(0, 125, 203);
 }
-.operator-btn:active{
+.operator-btn:active.dark-mode{
     background-color: rgb(0, 75, 121);
 }
-.info-btn{
+.info-btn.dark-mode{
     position: relative;
     left: -110px;
     width: 210px;
@@ -64,4 +118,56 @@ button:active{
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+.modeToggleBut{
+    position: absolute;
+    width: 210px;
+    transform: translate(-1155px,-555px);
+
+}
+.modeToggleBut.light-mode{
+    background-color: darkgrey;
+    color: white;
+}
+.modeToggleBut.dark-mode{
+    background-color: lightgray;
+    color: black;
+}
+.modeToggleBut:hover.light-mode{
+    background-color: hsl(0, 0%, 56%);
+    color: white;
+}
+.modeToggleBut:hover.dark-mode{
+    background-color: hsl(0, 0%, 91%);
+    color: black;
+}
+.modeToggleBut:active.light-mode{
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+}
+.modeToggleBut:active.dark-mode{
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+}
+#circle{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    position: absolute;
+    transition: background-color 0.3s, color 0.3s;
+    transition: transform 0.3s ease;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    pointer-events: none;
+}
+#circle.light-mode{
+    background-color: hsl(0, 0%, 50%);
+    transform:translate(-1210px,-555px);
+}
+#circle.dark-mode{
+    background-color: white;
+    transform: rotate(0deg);
+    transform: translate(-1100px,-555px);
 }
